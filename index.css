@@ -175,7 +175,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    background: repeating-linear-gradient(90deg, black 0 2px, transparent 4px 80vmin);
+    background: repeating-linear-gradient(90deg, black 0 2px, transparent 4px 90vmin);
     animation: vlines 0.45s steps(1) infinite;
 }
 
@@ -215,4 +215,31 @@ body {
     70% { transform: translate(-4%, -4%); }
     80% { transform: translate(2%, 2%); }
     90% { transform: translate(-3%, -3%); }
+}
+
+.tunnel {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.frame {
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: move 30s linear infinite;
+    animation-delay: calc(1s * var(--i) - 30s);
+}
+
+@keyframes move {
+    from { transform: scale(10); }
+    to   { transform: scale(1); }
 }
