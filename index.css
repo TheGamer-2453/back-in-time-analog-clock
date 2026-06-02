@@ -1,0 +1,117 @@
+body {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+#clockOuter {
+    position: relative;
+    height: 50vw;
+    width: 50vw;
+    border: 5px solid black;
+    box-shadow: -4px -4px 10px rgba(67, 67, 67, 0.5),
+                4px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+#clock {
+    position: relative;
+    height: 90%;
+    width: 90%;
+    border: 5px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clockInner {
+    position: relative;
+    background: white;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#clockInner::after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+#clockInner::after,
+#clockInner::before,
+#clockInner .marking {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 90%;
+    background: black;
+    z-index: 0;
+    left: 49%;
+    top: 5%;
+}
+
+#clockInner .marking {
+    background : black;
+    width: 3px;
+}
+
+#clockInner .marking.marking-1 {
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    transform: rotate(30deg)
+}
+
+#clockInner .marking.marking-2 {
+    -webkit-transform: rotate(60deg);
+    -moz-transform: rotate(60deg);
+    transform: rotate(60deg)
+}
+
+#clockInner .marking.marking-3 {
+    -webkit-transform: rotate(120deg);
+    -moz-transform: rotate(120deg);
+    transform: rotate(120deg)
+}
+
+#clockInner .marking.marking-4 {
+    -webkit-transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    transform: rotate(150deg)
+}
+
+.clockface {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background: white;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+#inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    margin-left: -10px;
+    margin-top: -5px;
+    background-color: black;
+    z-index: 1;
+}
